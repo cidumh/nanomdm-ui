@@ -1,0 +1,228 @@
+/* 策略配置 */
+
+.policy-page {
+    width: 100%;
+}
+
+.policy-block {
+    background: var(--surface);
+    border-radius: var(--radius);
+    padding: 20px 22px;
+    box-shadow: var(--shadow);
+    margin-bottom: 14px;
+}
+
+.policy-block .block-title {
+    font-size: 0.9375rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.policy-block .block-tip {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    margin-top: 4px;
+}
+
+.policy-block .block-tip.warn {
+    color: #b45309;
+}
+
+.policy-switch-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.policy-switch-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.policy-sub {
+    margin-top: 18px;
+    padding-top: 18px;
+    border-top: 1px solid var(--border);
+}
+
+.policy-sub .form-row {
+    margin-bottom: 14px;
+}
+
+.policy-sub .form-row input[type="text"],
+.policy-sub .form-row input[type="password"],
+.policy-sub .form-row input[type="number"] {
+    width: 100%;
+    padding: 10px 14px;
+    font-size: 0.9375rem;
+    font-family: var(--font);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--surface);
+    color: var(--text);
+    transition: border-color 0.2s, box-shadow 0.2s;
+    outline: none;
+}
+
+.policy-sub .form-row input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(0, 113, 227, 0.15);
+}
+
+.policy-sub textarea {
+    width: 100%;
+    padding: 10px 14px;
+    font-size: 0.875rem;
+    font-family: var(--font);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--surface);
+    color: var(--text);
+    resize: vertical;
+    outline: none;
+    line-height: 1.5;
+}
+
+.policy-sub textarea:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(0, 113, 227, 0.15);
+}
+
+.label-hint {
+    font-weight: 400;
+    color: var(--text-secondary);
+    font-size: 0.8125rem;
+}
+
+/* 开关 */
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 48px;
+    height: 28px;
+    flex-shrink: 0;
+}
+
+.switch-sm {
+    width: 42px;
+    height: 24px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.switch-slider {
+    position: absolute;
+    cursor: pointer;
+    inset: 0;
+    background: #d1d1d6;
+    border-radius: 980px;
+    transition: background 0.2s;
+}
+
+.switch-slider::before {
+    content: '';
+    position: absolute;
+    height: 22px;
+    width: 22px;
+    left: 3px;
+    bottom: 3px;
+    background: #fff;
+    border-radius: 50%;
+    transition: transform 0.2s;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+.switch-sm .switch-slider::before {
+    height: 18px;
+    width: 18px;
+}
+
+.switch input:checked + .switch-slider {
+    background: var(--primary);
+}
+
+.switch input:checked + .switch-slider::before {
+    transform: translateX(20px);
+}
+
+.switch-sm input:checked + .switch-slider::before {
+    transform: translateX(18px);
+}
+
+.switch input:disabled + .switch-slider {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+
+/* 功能限制子项（与 DEP 安装选项同款布局） */
+
+.func-switch-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 8px 16px;
+    margin-top: 4px;
+}
+
+.func-switch-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 6px 0;
+    font-size: 0.875rem;
+}
+
+.func-switch-item > span {
+    flex: 1;
+    min-width: 0;
+    line-height: 1.4;
+}
+
+.func-security > span {
+    color: #c93400;
+    font-weight: 500;
+}
+
+.func-camera-whitelist {
+    grid-column: 1 / -1;
+    padding: 4px 0 8px 16px;
+    border-left: 2px solid #f0f0f5;
+    margin: 4px 0 8px;
+}
+
+.func-camera-whitelist .func-switch-item {
+    max-width: 320px;
+}
+
+.func-camera-whitelist .form-row {
+    margin-top: 10px;
+}
+
+.policy-actions {
+    margin-top: 8px;
+}
+
+.policy-actions .btn-primary {
+    width: auto;
+    min-width: 140px;
+}
+
+.policy-page .msg-box {
+    max-width: none;
+}
+
+@media (max-width: 640px) {
+    .policy-switch-row {
+        flex-wrap: wrap;
+    }
+
+    .func-switch-grid {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,189 @@
+.mdm-page {
+    width: 100%;
+}
+
+.mdm-block {
+    background: var(--surface);
+    border-radius: var(--radius);
+    padding: 20px 22px;
+    box-shadow: var(--shadow);
+    margin-bottom: 14px;
+}
+
+.mdm-block .block-title {
+    font-size: 0.9375rem;
+    font-weight: 600;
+    margin: 0 0 14px;
+}
+
+.mdm-block .block-tip {
+    font-size: 0.8125rem;
+    color: var(--text-secondary);
+    margin: -6px 0 16px;
+    line-height: 1.6;
+}
+
+.mdm-form .form-row,
+.mdm-command-form .form-row {
+    margin-bottom: 14px;
+}
+
+.mdm-form .form-row input[type="text"],
+.mdm-form .form-row input[type="password"],
+.mdm-command-form .form-row input[type="text"],
+.mdm-command-form .form-row textarea {
+    width: 100%;
+    padding: 10px 14px;
+    font-size: 0.9375rem;
+    font-family: var(--font);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--surface);
+    color: var(--text);
+    transition: border-color 0.2s, box-shadow 0.2s;
+    outline: none;
+}
+
+.mdm-command-form .form-row textarea {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 0.8125rem;
+    resize: vertical;
+    min-height: 220px;
+    line-height: 1.5;
+}
+
+.mdm-form .form-row input:focus,
+.mdm-command-form .form-row input:focus,
+.mdm-command-form .form-row textarea:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(0, 113, 227, 0.15);
+}
+
+.mdm-form .form-row input:disabled,
+.mdm-command-form .form-row input:disabled,
+.mdm-command-form .form-row textarea:disabled {
+    background: #f5f5f7;
+    color: var(--text-secondary);
+    cursor: not-allowed;
+}
+
+.mdm-form .required,
+.mdm-command-form .required {
+    color: var(--danger);
+}
+
+.mdm-form .label-hint,
+.mdm-command-form .label-hint {
+    font-size: 0.75rem;
+    font-weight: 400;
+    color: var(--text-secondary);
+}
+
+.mdm-form .field-tip,
+.mdm-command-form .field-tip {
+    font-size: 0.75rem;
+    color: #b45309;
+    margin: 6px 0 8px;
+    line-height: 1.5;
+}
+
+.mdm-form .field-tip code,
+.mdm-command-form .field-tip code {
+    font-family: ui-monospace, monospace;
+    font-size: 0.75rem;
+    background: #f5f5f7;
+    padding: 1px 4px;
+    border-radius: 4px;
+}
+
+.mdm-actions {
+    margin-top: 8px;
+}
+
+.mdm-actions .btn-primary {
+    width: auto;
+    min-width: 140px;
+}
+
+.mdm-command-form.is-disabled {
+    opacity: 0.72;
+}
+
+.command-result {
+    margin-top: 18px;
+    padding-top: 18px;
+    border-top: 1px solid var(--border);
+}
+
+.command-result .result-head {
+    font-size: 0.9375rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.command-result .result-success {
+    color: #248a3d;
+}
+
+.command-result .result-error {
+    color: var(--danger);
+}
+
+.command-result .result-row {
+    display: flex;
+    gap: 12px;
+    padding: 8px 0;
+    font-size: 0.8125rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.command-result .result-row:last-of-type {
+    border-bottom: none;
+}
+
+.command-result .result-label {
+    flex: 0 0 120px;
+    color: var(--text-secondary);
+}
+
+.command-result .result-value {
+    flex: 1;
+    word-break: break-all;
+}
+
+.command-result .result-value.mono {
+    font-family: ui-monospace, monospace;
+    font-size: 0.75rem;
+}
+
+.command-result .result-raw {
+    margin-top: 12px;
+}
+
+.command-result .result-raw pre {
+    margin: 8px 0 0;
+    padding: 12px 14px;
+    background: #1d1d1f;
+    color: #f5f5f7;
+    border-radius: 8px;
+    font-size: 0.75rem;
+    line-height: 1.5;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    word-break: break-all;
+}
+
+.mdm-page .msg-box {
+    max-width: none;
+}
+
+@media (max-width: 640px) {
+    .command-result .result-row {
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .command-result .result-label {
+        flex: none;
+    }
+}
